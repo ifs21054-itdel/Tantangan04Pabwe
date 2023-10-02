@@ -44,7 +44,7 @@ document.querySelector(".check").addEventListener("click", function () {
   else if (guess === secretNumber) {
     displayMessage("Correct Number!");
     document.querySelector(".number").textContent = secretNumber;
-     setDisplayForWinner();
+    setDisplayForWinner();
 
     if (score > highscore) {
       highscore = score;
@@ -52,13 +52,13 @@ document.querySelector(".check").addEventListener("click", function () {
     }
   }
   // when guess is wrong
-  else if (guess != secretNumber) {
+  else if (guess !== secretNumber) {
     if (score > 1) {
-      displayMessege(guess > secretNumber ? "Too high!" : "Too low!");
+      displayMessage(guess > secretNumber ? "Too high!" : "Too low!");
       score--;
       displayScore(score);
     } else {
-      displayMessege("You lost the game!");
+      displayMessage("You lost the game!");
       displayScore(0);
     }
   }
@@ -66,5 +66,4 @@ document.querySelector(".check").addEventListener("click", function () {
 
 document.querySelector(".again").addEventListener("click", function () {
   resetDisplay();
-})
-
+});
